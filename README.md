@@ -60,3 +60,42 @@ print(calendar.timeZone)
 => Asia/Seoul (fixed (equal to current))
 ```
 
+우리가 주로 사용하는 달력이 [그레고리력](https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%A0%88%EA%B3%A0%EB%A6%AC%EB%A0%A5)이라는 것을 생각하면 Calendar 가 달력을 의미하는 것이 맞는것 같다. <br><br>
+
+시간대도 Asia/Seoul로 출력하는 것을 보면, 유저 디바이스 정보에 따라 현재 달령 정보를 가져오는 것이 아닐까 싶다. <br><br>
+
+Calendar를 이용하면 date 객체를 이용해서 작업해야할때 많은 도움을 줄 수 있는데 자세한 내용은 [apple 공식 문서](https://developer.apple.com/documentation/foundation/calendar)를 보는게 가장 좋다. <br><br>
+
+Calendar에서 개인적으로 자주 사용하게 되고 유용한 함수들만 몇 가지 생각해보았다. <br><br>
+
+```
+func date(Date, matchesComponents: DateComponents) -> Bool
+Determines if the date has all of the specified date components.
+
+func component(Calendar.Component, from: Date) -> Int
+Returns the value for one component of a date.
+
+func dateComponents(Set<Calendar.Component>, from: Date) -> DateComponents
+Returns all the date components of a date, using the calendar time zone.
+
+func dateComponents(Set<Calendar.Component>, from: Date, to: Date) -> DateComponents
+Returns the difference between two dates.
+
+func isDate(Date, inSameDayAs: Date) -> Bool
+Returns a Boolean value indicating whether a date is within the same day as another date.
+
+func isDateInToday(Date) -> Bool
+Returns a Boolean value indicating whether the given date is within today.
+
+func isDateInTomorrow(Date) -> Bool
+Returns a Boolean value indicating whether the given date is within tomorrow.
+
+func isDateInYesterday(Date) -> Bool
+Returns a Boolean value indicating whether the given date is within yesterday.
+
+func isDateInWeekend(Date) -> Bool
+Returns a Boolean value indicating whether the given date is within a weekend period.
+
+var isLeapMonth: Bool
+윤달인지 아닌지 확인
+```
